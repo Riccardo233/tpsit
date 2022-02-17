@@ -1,0 +1,30 @@
+ <html>
+<head>
+  <style>
+    #b{
+      height: 200px;
+     width: 200px;
+     background-color: green;    }
+    </style>
+</head>
+<body>
+<button onclick="tempo()">Clicca e io ti salvo il tempo!</button>
+<p id="stampa"></p>
+<div id="b"></div>
+<script>
+let mioarray=[];
+ let tempoi=Date.now();
+function tempo() {
+let tempoclick=Date.now()-tempoi;
+mioarray.push(tempoclick);
+stampaArray();
+if(tempoclick>2000){
+document.getElementById("b").style.backgroundColor="red";
+}
+}
+function stampaArray() {
+document.getElementById("stampa").innerHTML=mioarray.toString();
+}
+</script>
+</body>
+</html>
