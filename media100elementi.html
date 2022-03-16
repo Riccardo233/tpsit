@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script>
+    let vett=[], num=1000,indice;
+    function riempiArray() {
+        for (let i=0; i<num; i++) {
+      vett[i]=parseInt(Math.random() * 1000);
+            document.getElementById("out").innerHTML += vett[i]+" ";
+        }
+    }
+    function max() {
+        let max=-1;
+        for (let i=0; i<vett.length; i++) {
+            if (vett[i]>max) {
+                max=vett[i];
+                indice=i;
+            }
+        }
+        document.getElementById("outmax").innerHTML += max+" "+indice;
+    }
+    function minimo() {
+        let min=1001;
+        for (let i=0; i<vett.length; i++) {
+            if (vett[i]<min) {
+                min=vett[i];
+                indice=i;
+            }
+        }
+        document.getElementById("outMinimo").innerHTML += min+" "+indice;
+    }
+    </script>
+</head>
+<body>
+    <button onclick="caricavett()">
+         carica il vettore
+    </button>
+    <button onclick="max()">
+        massimo
+    </button>
+    <button onclick="minimo()">
+        minimo
+    </button>
+    <p id="out">il numero è</p>
+    <p id="outMassimo">il numero massimo e la sua posizione: </p>
+    <p id="outMinimo">Il numero minimo e la sua posizione: </p>
+</body>
+</html>
